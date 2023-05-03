@@ -11,7 +11,7 @@ export default class Presenter {
   tripListComponent = new TripListView();
   contentComponent = new ContentContainerView();
 
-  constructor({container}) {
+  constructor({ container }) {
     this.container = container;
   }
 
@@ -19,10 +19,10 @@ export default class Presenter {
     render(this.contentComponent, this.container);
     render(new SortButtonsView(), this.contentComponent.getElement());
     render(this.tripListComponent, this.contentComponent.getElement());
-    render(new EditFormView(),  this.tripListComponent.getElement());
+    render(new EditFormView(), this.tripListComponent.getElement());
 
     for (let i = 0; i < ITEM_COUNT; i++) {
-      render(new TripItemView(),  this.tripListComponent.getElement());
+      render(new TripItemView(), this.tripListComponent.getElement());
     }
   }
 }
